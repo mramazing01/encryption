@@ -3,6 +3,9 @@ package com.jonas;
 public class Main {
 
     public static void main(String[] args) {
-	System.out.println("Hello World");
+        encryption enc = new encryption();
+        enc.GetPlainText();
+        enc.getKey();
+        enc.encrypt();
     }
 }
