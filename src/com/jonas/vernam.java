@@ -7,6 +7,6 @@ public class vernam extends encryption{
         out.println(plaintext);
         out.println(key);
         out.println("This works");
-        /*i'm going to add some comments*/
+        /*I'm going to add some comments*/
     }
 }
