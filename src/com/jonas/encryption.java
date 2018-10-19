@@ -3,9 +3,9 @@ import java.util.Scanner;
 import static java.lang.System.*;
 
 public class encryption{
-    private String plaintext;
-    private String cyphertext;
-    private String key;
+    protected String plaintext;
+    protected String cyphertext;
+    protected String key;
     Scanner a =new Scanner(in);
     public void GetPlainText(){
         out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=");
