@@ -3,18 +3,19 @@ package com.jonas;
 import static java.lang.System.out;
 
 public class vernam extends encryption{
-    public int newKey;
-
-    public String keytobin(){
+    private int asciikey;
+    private int asciitext;
+    public void keyToAsc(){
         Character p=key.toLowerCase().charAt(0);;
-        int m=(int)p;
-        String x=Integer.toBinaryString(m);
-        return x;
+        asciikey=(int)p;
     }
     protected void encryptCharacterNumber(int whichOne) {
-        out.println(plaintext);
-        out.println(key);
-        out.println("This works");
-
+        Character p = plaintext.toLowerCase().charAt(whichOne);
+        asciitext=(int)p;
+        int asciicyper = asciitext^asciikey;
+        out.println("asciit "+asciitext);
+        out.println("asciik "+asciikey);
+        out.println("asciic "+asciicyper);
+        out.println("words "+(char)asciicyper);
     }
 }
