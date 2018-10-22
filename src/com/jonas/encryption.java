@@ -3,35 +3,21 @@ import java.util.Scanner;
 import static java.lang.System.*;
 
 public class encryption{
-    protected String plaintext;
-    protected String cyphertext;
-    protected String key;
+    public String plaintext;
+    public String cyphertext;
+    public String key;
     Scanner a =new Scanner(in);
-    public void GetPlainText(){
-        out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-        out.println("Please enter your text");
-        out.println("*Do not enter punctuation as");
-        out.println("this will make your message");
-        out.println("easier to decrypt*");
-        out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-        plaintext=a.nextLine();
+    public void setPlainText(String v){
+        plaintext=v;
     }
-    public void GetCyperText(){
-        out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-        out.println("Please enter your text");
-        out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-        cyphertext=a.nextLine();
-    }
+
     public void encrypt(){
         for(int i=0; i<plaintext.length();i++){
             encryptCharacterNumber(i);
         }
     }
-    public void getKey(){
-        out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-        out.println("Please enter your key");
-        out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-        key=a.nextLine();
+    public void setKey(String c){
+        key=c;
     }
 
     protected void encryptCharacterNumber(int whichOne) {
@@ -43,12 +29,16 @@ public class encryption{
             while(finalLetter>122){
                 finalLetter-=26;
             }
-            out.print((char)finalLetter);
+            cyphertext+=(char)finalLetter;
         }else if(m>47&&m<58){
             int finalLetter=m+keyy;
             while(finalLetter>57) finalLetter-=9;
-            out.print((char)finalLetter);
-        }else if(m==32) out.print((char)m);
+            cyphertext+=(char)finalLetter;
+        }else if(m==32){
+            cyphertext+=(char)32;
+        }else{
+            ;
+        }
     }
 
 }

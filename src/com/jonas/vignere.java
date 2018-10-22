@@ -12,8 +12,8 @@ public class vignere extends encryption{
             h = h - 97;
             int finalLetter = h + m;
             while (finalLetter > 122) finalLetter -= 26;
-            out.print((char) finalLetter);
-        }else out.print((char) m);
+            cyphertext+=(char)finalLetter;
+        }else cyphertext+=(char) m;
     }
     public void encrypt(){
         int a =0;

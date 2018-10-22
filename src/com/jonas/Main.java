@@ -3,7 +3,15 @@ package com.jonas;
 import java.io.IOException;
 import java.util.Scanner;
 
-/*Vernam Vigere*/
+public class Main {
+
+    public static void main(String[] args){
+        test t = new test();
+        t.h();
+    }
+}
+
+/*Vernam Vigere
 public class Main {
 
     public static void main(String[] args) throws IOException {
@@ -24,7 +32,6 @@ public class Main {
                 vernam ver = new vernam();
                 ver.GetPlainText();
                 ver.getKey();
-                ver.keyToAsc();
                 ver.encrypt();
             } else if (b.equals("i")) {
                 vignere vig = new vignere();
@@ -38,3 +45,4 @@ public class Main {
         }
     }
 }
+*/
