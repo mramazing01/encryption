@@ -6,26 +6,19 @@ import javax.imageio.ImageIO;
 import java.util.Scanner;
 
 class pic{
-    public void encrypt() throws IOException {
+    public void encrypt(String file, String message, String save) throws IOException {
         int h=0;
         int w=0;
         int width=1920;
         int height=1080;
         BufferedImage image=null;
         File f = null;
-        Scanner a = new Scanner(System.in);
-        System.out.println("File name");
-        String m=a.nextLine();
-        System.out.println("save name");
-        String n=a.nextLine();
-        System.out.println("Message");
-        String x=a.nextLine();
         image=new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
-        image=ImageIO.read(getClass().getResource(m));
+        image=ImageIO.read(getClass().getResource(file));
         width = image.getWidth();
         height = image.getHeight();
-        for(int i=0;i<x.length();i++){
-            Character p = x.toLowerCase().charAt(i);
+        for(int i=0;i<message.length();i++){
+            Character p = message.toLowerCase().charAt(i);
             int r=(int)p;
             int[] pix;
             if(w>=1920){
@@ -37,7 +30,7 @@ class pic{
             image.setRGB(w, h, pixel);
             w+=5;
         }
-        f=new File(n);
+        f=new File(save);
         ImageIO.write(image, "png", f);
         System.out.println("Writing complete");
     }

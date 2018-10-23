@@ -25,7 +25,9 @@ public class test {
                 enc.setPlainText(a);
                 enc.setKey(b);
                 enc.encrypt();
-                textField3.setText(enc.cyphertext);
+                String temp=enc.cyphertext;
+                temp=temp.replace("null","");
+                textField3.setText(temp);
             }
         });
         vernamButton.addActionListener(new ActionListener() {
@@ -37,7 +39,9 @@ public class test {
                 ver.setPlainText(a);
                 ver.setKey(b);
                 ver.encrypt();
-                textField3.setText(ver.cyphertext);
+                String temp=ver.cyphertext;
+                temp=temp.replace("null","");
+                textField3.setText(temp);
             }
         });
         vignereButton.addActionListener(new ActionListener() {
@@ -49,7 +53,9 @@ public class test {
                 vig.setPlainText(a);
                 vig.setKey(b);
                 vig.encrypt();
-                textField3.setText(vig.cyphertext);
+                String temp=vig.cyphertext;
+                temp=temp.replace("null","");
+                textField3.setText(temp);
             }
         });
         pictureButton.addActionListener(new ActionListener() {
@@ -57,9 +63,10 @@ public class test {
             public void actionPerformed(ActionEvent actionEvent) {
                 String a=textField1.getText();
                 String b=textField2.getText();
+                String c=textField3.getText();
                 pic pi=new pic();
                 try {
-                    pi.encrypt();
+                    pi.encrypt(b,a,c);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -74,6 +81,5 @@ public class test {
         frame.pack();
         frame.setVisible(true);
         frame.setTitle("bob");
-
     }
 }
