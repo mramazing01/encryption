@@ -45,6 +45,12 @@ public class test {
                 vernam ver = new vernam();
                 ver.setPlainText(a);
                 ver.setKey(b);
+                int box=comboBox1.getSelectedIndex();
+                if(box==0){
+                    ver.encrypt();
+                }else{
+                    ver.decrypt();
+                }
                 ver.encrypt();
                 String temp=ver.cyphertext;
                 temp=temp.replace("null","");
@@ -98,6 +104,6 @@ public class test {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
-        frame.setTitle("bob");
+        frame.setTitle("Encrypter/Decrypter program");
     }
 }

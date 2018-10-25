@@ -15,4 +15,13 @@ public class vernam extends encryption{
         String textcyper=Integer.toString(asciicyper);
         cyphertext+=(asciicyper+" ");
     }
+    protected void decryptCharacterNumber(int whichOne){
+        Character p = plaintext.toLowerCase().charAt(whichOne);
+        asciitext=(int)p;
+        Character l=key.toLowerCase().charAt(whichOne);
+        asciikey=(int)l;
+        int asciicyper = asciitext^asciikey;
+        String textcyper=Integer.toString(asciicyper);
+        cyphertext+=(asciicyper+" ");
+    }
 }
