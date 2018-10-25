@@ -47,8 +47,8 @@ public class vignere extends encryption{
         int h=(int)g;
         if(m>96&&m<123) {
             h = h - 97;
-            int finalLetter = h - m;
-            while (finalLetter < 122) finalLetter += 26;
+            int finalLetter = m-h;
+            while (finalLetter <= 96) finalLetter += 26;
             cyphertext+=(char)finalLetter;
         }else cyphertext+=(char) m;
     }

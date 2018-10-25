@@ -7,21 +7,21 @@ public class vernam extends encryption{
     private int asciitext;
 
     protected void encryptCharacterNumber(int whichOne) {
-        Character p = plaintext.toLowerCase().charAt(whichOne);
+        Character p = plaintext.charAt(whichOne);
         asciitext=(int)p;
         Character l=key.toLowerCase().charAt(whichOne);
         asciikey=(int)l;
         int asciicyper = asciitext^asciikey;
-        String textcyper=Integer.toString(asciicyper);
+        /*String textcyper=Integer.toString(asciicyper);*/
         cyphertext+=(asciicyper+" ");
     }
     protected void decryptCharacterNumber(int whichOne){
-        Character p = plaintext.toLowerCase().charAt(whichOne);
+        Character p = plaintext.charAt(whichOne);
         asciitext=(int)p;
         Character l=key.toLowerCase().charAt(whichOne);
         asciikey=(int)l;
         int asciicyper = asciitext^asciikey;
         String textcyper=Integer.toString(asciicyper);
-        cyphertext+=(asciicyper+" ");
+        cyphertext+=(textcyper+" ");
     }
 }

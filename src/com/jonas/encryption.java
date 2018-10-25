@@ -51,7 +51,7 @@ public class encryption{
         int m=(int)p;
         if(m>96&&m<123){
             int finalLetter=m-keyy;
-            while(finalLetter<122){
+            while(finalLetter<97){
                 finalLetter+=26;
             }
             cyphertext+=(char)finalLetter;

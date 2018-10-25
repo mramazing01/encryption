@@ -51,7 +51,6 @@ public class test {
                 }else{
                     ver.decrypt();
                 }
-                ver.encrypt();
                 String temp=ver.cyphertext;
                 temp=temp.replace("null","");
                 textField3.setText(temp);
@@ -88,12 +87,6 @@ public class test {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            }
-        });
-        comboBox1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-
             }
         });
     }
