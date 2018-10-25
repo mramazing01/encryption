@@ -14,6 +14,7 @@ public class test {
     private JTextField textField1;
     private JTextField textField2;
     private JTextField textField3;
+    private JComboBox comboBox1;
 
     public test() {
         caesarButton.addActionListener(new ActionListener() {
@@ -24,7 +25,13 @@ public class test {
                 encryption enc = new encryption();
                 enc.setPlainText(a);
                 enc.setKey(b);
-                enc.encrypt();
+                int box=comboBox1.getSelectedIndex();
+                if(box==0){
+                    enc.encrypt();
+                }else{
+                    enc.decrypt();
+                }
+
                 String temp=enc.cyphertext;
                 temp=temp.replace("null","");
                 textField3.setText(temp);
@@ -52,7 +59,12 @@ public class test {
                 vignere vig = new vignere();
                 vig.setPlainText(a);
                 vig.setKey(b);
-                vig.encrypt();
+                int box=comboBox1.getSelectedIndex();
+                if(box==0){
+                    vig.encrypt();
+                }else{
+                    vig.decrypt();
+                }
                 String temp=vig.cyphertext;
                 temp=temp.replace("null","");
                 textField3.setText(temp);
@@ -70,6 +82,12 @@ public class test {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+            }
+        });
+        comboBox1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
             }
         });
     }

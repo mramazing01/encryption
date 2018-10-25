@@ -40,5 +40,28 @@ public class encryption{
             ;
         }
     }
+    public void decrypt(){
+        for(int i=0; i<plaintext.length();i++){
+            decryptCharacterNumber(i);
+        }
+    }
+    protected void decryptCharacterNumber(int whichOne) {
+        Character p = plaintext.toLowerCase().charAt(whichOne);
+        int keyy=Integer.parseInt(key);
+        int m=(int)p;
+        if(m>96&&m<123){
+            int finalLetter=m-keyy;
+            while(finalLetter<122){
+                finalLetter+=26;
+            }
+            cyphertext+=(char)finalLetter;
+        }else if(m>47&&m<58){
+            int finalLetter=m-keyy;
+            while(finalLetter<57) finalLetter+=9;
+            cyphertext+=(char)finalLetter;
+        }else if(m==32){
+            cyphertext+=(char)32;
+        }
+    }
 
 }
