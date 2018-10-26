@@ -82,8 +82,17 @@ public class test {
                 String b=textField2.getText();
                 String c=textField3.getText();
                 pic pi=new pic();
+                int box=comboBox1.getSelectedIndex();
                 try {
-                    pi.encrypt(b,a,c);
+                    if(box==0){
+                        pi.encrypt(b,a,c
+                        );
+                    }else if(box==1){
+                        pi.decrypt(b);
+                        String x=pi.finalWord;
+                        textField3.setText(x);
+                    }
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
