@@ -1,12 +1,9 @@
 package com.jonas;
-import java.util.Scanner;
-import static java.lang.System.*;
 
-public class encryption{
-    public String plaintext;
+class encryption{
+    String plaintext;
     public String cyphertext;
-    public String key;
-    Scanner a =new Scanner(in);
+    String key;
     public void setPlainText(String v){
         plaintext=v;
     }
@@ -20,7 +17,7 @@ public class encryption{
         key=c;
     }
 
-    protected void encryptCharacterNumber(int whichOne) {
+    void encryptCharacterNumber(int whichOne) {
         Character p = plaintext.toLowerCase().charAt(whichOne);
         int keyy=Integer.parseInt(key);
         int m=(int)p;
@@ -36,8 +33,6 @@ public class encryption{
             cyphertext+=(char)finalLetter;
         }else if(m==32){
             cyphertext+=(char)32;
-        }else{
-            ;
         }
     }
     public void decrypt(){
@@ -45,7 +40,7 @@ public class encryption{
             decryptCharacterNumber(i);
         }
     }
-    protected void decryptCharacterNumber(int whichOne) {
+    void decryptCharacterNumber(int whichOne) {
         Character p = plaintext.toLowerCase().charAt(whichOne);
         int keyy=Integer.parseInt(key);
         int m=(int)p;

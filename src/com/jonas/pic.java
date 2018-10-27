@@ -3,7 +3,6 @@ import java.io.File;
 import java.io.IOException;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
-import java.util.Scanner;
 
 import static java.lang.System.*;
 
@@ -29,7 +28,7 @@ class pic{
                 h=h+1;
             }
             pix=image.getRaster().getPixel(w,h,new int[3]);
-            int pixel = 0<<24 | r<<16 | pix[1]<<8 | pix[2];
+            int pixel = r << 16 | pix[1] << 8 | pix[2];
             image.setRGB(w, h, pixel);
             w+=5;
         }

@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
-public class test {
+class test {
     private JPanel panel1;
     private JButton caesarButton;
     private JButton vernamButton;
@@ -17,9 +17,8 @@ public class test {
     private JComboBox comboBox1;
 
     public test() {
-        caesarButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
+        caesarButton.addActionListener(actionEvent -> {
+            try{
                 String a=textField1.getText();
                 String b=textField2.getText();
                 encryption enc = new encryption();
@@ -35,11 +34,14 @@ public class test {
                 String temp=enc.cyphertext;
                 temp=temp.replace("null","");
                 textField3.setText(temp);
+            }catch(Exception e){
+                textField3.setText("Something went wrong - try again");
             }
+
+
         });
-        vernamButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
+        vernamButton.addActionListener(actionEvent -> {
+            try{
                 String a=textField1.getText();
                 String b=textField2.getText();
                 vernam ver = new vernam();
@@ -54,11 +56,12 @@ public class test {
                 String temp=ver.cyphertext;
                 temp=temp.replace("null","");
                 textField3.setText(temp);
+            }catch(Exception e){
+                textField3.setText("Something went wrong - try again");
             }
         });
-        vignereButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
+        vignereButton.addActionListener(actionEvent -> {
+            try{
                 String a=textField1.getText();
                 String b=textField2.getText();
                 vignere vig = new vignere();
@@ -73,11 +76,13 @@ public class test {
                 String temp=vig.cyphertext;
                 temp=temp.replace("null","");
                 textField3.setText(temp);
+            }catch(Exception e){
+                textField3.setText("Something went wrong - try again");
             }
+
         });
-        pictureButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
+        pictureButton.addActionListener(actionEvent -> {
+            try{
                 String a=textField1.getText();
                 String b=textField2.getText();
                 String c=textField3.getText();
@@ -96,7 +101,11 @@ public class test {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+            }catch(Exception e){
+                textField3.setText("Something went wrong - try again");
+                System.out.println(e);
             }
+
         });
     }
 

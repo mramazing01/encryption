@@ -1,9 +1,7 @@
 package com.jonas;
 
-import static java.lang.System.out;
-
 public class vignere extends encryption{
-    protected void encryptCharacterNumber(int whichOne,int howMuch) {
+    private void encryptCharacterNumber(int whichOne, int howMuch) {
         Character p = plaintext.toLowerCase().charAt(whichOne);
         Character g = key.toLowerCase().charAt(howMuch);
         int m=(int)p;
@@ -18,7 +16,7 @@ public class vignere extends encryption{
     public void encrypt(){
         int a =0;
         for(int i=0; i<plaintext.length();i++){
-            if(Character.isLetter(plaintext.charAt(i))==true){
+            if(Character.isLetter(plaintext.charAt(i))){
                 if(a==(key.length())){
                     a=0;
                 }
@@ -31,7 +29,7 @@ public class vignere extends encryption{
     public void decrypt(){
         int a =0;
         for(int i=0; i<plaintext.length();i++){
-            if(Character.isLetter(plaintext.charAt(i))==true){
+            if(Character.isLetter(plaintext.charAt(i))){
                 if(a==(key.length())){
                     a=0;
                 }
@@ -40,7 +38,7 @@ public class vignere extends encryption{
             }else decryptCharacterNumber(i, 0);
         }
     }
-    protected void decryptCharacterNumber(int whichOne,int howMuch) {
+    private void decryptCharacterNumber(int whichOne, int howMuch) {
         Character p = plaintext.toLowerCase().charAt(whichOne);
         Character g = key.toLowerCase().charAt(howMuch);
         int m=(int)p;

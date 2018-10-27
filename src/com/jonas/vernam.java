@@ -1,13 +1,11 @@
 package com.jonas;
 
-import static java.lang.System.out;
-
-public class vernam extends encryption{
+class vernam extends encryption{
     private int asciikey;
     private int asciitext;
 
     protected void encryptCharacterNumber(int whichOne) {
-        Character p = plaintext.charAt(whichOne);
+        char p = plaintext.charAt(whichOne);
         asciitext=(int)p;
         Character l=key.toLowerCase().charAt(whichOne);
         asciikey=(int)l;
