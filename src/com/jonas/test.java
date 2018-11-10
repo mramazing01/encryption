@@ -1,8 +1,6 @@
 package com.jonas;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.IOException;
 
 class test {
@@ -16,7 +14,7 @@ class test {
     private JTextField textField3;
     private JComboBox comboBox1;
 
-    public test() {
+    private test() {
         caesarButton.addActionListener(actionEvent -> {
             try{
                 String a=textField1.getText();

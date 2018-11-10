@@ -35,7 +35,7 @@ class encryption{
             cyphertext+=(char)32;
         }
     }
-    public void decrypt(){
+    void decrypt(){
         for(int i=0; i<plaintext.length();i++){
             decryptCharacterNumber(i);
         }
